@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.logger.maskingsensitivedata.model.Address;
 import com.logger.maskingsensitivedata.model.User;
 
 @RestController
@@ -38,29 +39,38 @@ public class MaskSensitiveDataController {
 		*/
 		
 		User user = new User();
+		
+		Address address = new Address();
+		address.setStreet("street");
+		address.setDistrict("district");
+		address.setPincode("111111");
+		
 		user.setUser_id("87656");
 		user.setSSN("786445563");
-		user.setAddress("22 Street");
+		user.setAddress(address);
 		user.setEmail_id("Chicago@gmail.com");
 		user.setName("Mani");
 		JSONObject userDetails = new JSONObject(user);
 		logger.info("In Info Logger : User Details : {}", userDetails);
 		System.out.println("=============");
-		System.out.println("Without Logger : User Details" +userDetails);
+		System.out.println("Without Logger : User Details : " +userDetails);
 		return "Successfuly Mask Private Data";
 		
 
 		/* OUTPUT
 		 
-		 com.logger.maskingsensitivedata.controller.MaskSensitiveDataController: 
-		 In Info Logger : User Details : 
-		 {"email_id":"*****************","address":"*********","user_id":"87656","name":"Mani","SSN":"*********"}
-		 
-		 =============
-		 
-		 Without Logger : User Details
-		 {"email_id":"Chicago@gmail.com","address":"22 Street","user_id":"87656","name":"Mani","SSN":"786445563"}
-		 
+		In Info Logger : User Details : 
+		{"email_id":"*****************",
+		"address":{"pincode":"111111","street":"******","district":"district"},
+		"user_id":"87656","name":"Mani","SSN":"*********"}
+		
+		=============
+		
+		Without Logger : User Details : 
+		{"email_id":"Chicago@gmail.com",
+		"address":{"pincode":"111111","street":"street","district":"district"},
+		"user_id":"87656","name":"Mani","SSN":"786445563"}
+
 		 */
 	}
 

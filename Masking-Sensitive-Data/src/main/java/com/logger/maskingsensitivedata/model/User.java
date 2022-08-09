@@ -3,7 +3,7 @@ package com.logger.maskingsensitivedata.model;
 public class User {
 
 	private String user_id;
-	private String address;
+	private Address address;
 	private String email_id;
 	private String SSN;
 	private String ip_address;
@@ -17,11 +17,11 @@ public class User {
 		this.user_id = user_id;
 	}
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
@@ -56,5 +56,5 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }
