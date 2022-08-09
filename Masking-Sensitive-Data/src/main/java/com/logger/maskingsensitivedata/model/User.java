@@ -1,60 +1,44 @@
 package com.logger.maskingsensitivedata.model;
 
+import java.util.List;
+
 public class User {
 
-	private String user_id;
-	private Address address;
-	private String email_id;
-	private String SSN;
-	private String ip_address;
-	private String name;
+	private String userId;
+	private List<Address> addressList;
+	private String password;
+	private PersonalData personalData;
 
-	public String getUser_id() {
-		return user_id;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public Address getAddress() {
-		return address;
+	public List<Address> getAddressList() {
+		return addressList;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
 	}
 
-	public String getEmail_id() {
-		return email_id;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getSSN() {
-		return SSN;
+	public PersonalData getPersonalData() {
+		return personalData;
 	}
 
-	public void setSSN(String sSN) {
-		SSN = sSN;
-	}
-
-	public String getIp_address() {
-		return ip_address;
-	}
-
-	public void setIp_address(String ip_address) {
-		this.ip_address = ip_address;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setPersonalData(PersonalData personalData) {
+		this.personalData = personalData;
 	}
 
 }

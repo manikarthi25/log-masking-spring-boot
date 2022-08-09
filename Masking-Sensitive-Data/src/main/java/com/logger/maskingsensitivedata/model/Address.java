@@ -2,9 +2,18 @@ package com.logger.maskingsensitivedata.model;
 
 public class Address {
 
+	private String addressType;
 	private String street;
 	private String district;
 	private String pincode;
+
+	public String getAddressType() {
+		return addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
 
 	public String getStreet() {
 		return street;
