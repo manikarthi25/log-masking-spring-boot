@@ -51,12 +51,16 @@ public class MaskSensitiveDataController {
 		
 
 		/* OUTPUT
+		 
 		 com.logger.maskingsensitivedata.controller.MaskSensitiveDataController: 
 		 In Info Logger : User Details : 
 		 {"email_id":"*****************","address":"*********","user_id":"87656","name":"Mani","SSN":"*********"}
+		 
 		 =============
+		 
 		 Without Logger : User Details
 		 {"email_id":"Chicago@gmail.com","address":"22 Street","user_id":"87656","name":"Mani","SSN":"786445563"}
+		 
 		 */
 	}
 
