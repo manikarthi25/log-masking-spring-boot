@@ -3,10 +3,13 @@ package com.logger.maskingsensitivedata.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.logger.maskingsensitivedata.model.User;
 
 @RestController
 public class MaskSensitiveDataController {
@@ -20,6 +23,7 @@ public class MaskSensitiveDataController {
 	
 	@GetMapping("/maskdata")
 	public String maskSensitiveData() {
+		
 		Map<String, String> user = new HashMap<>();
 		user.put("user_id", "87656");
 		user.put("SSN", "786445563");
@@ -28,8 +32,21 @@ public class MaskSensitiveDataController {
 		user.put("Country", "U.S.");
 		user.put("ip_address", "192.168.1.1");
 		user.put("email_id", "spring@baeldung.com");
-		logger.info("User JSON: {}", user);
-		return " Successfuly Mask Private Data";
+		JSONObject userDetails = new JSONObject(user);
+		logger.info("User JSON: {}", userDetails);
+		return "Successfuly Mask Private Data";
+		/*
+		User user = new User();
+		user.setUser_id("87656");
+		user.setSSN("786445563");
+		user.setAddress("22 Street");
+		user.setEmail_id("Chicago@gmail.com");
+		user.setName("Mani");
+		logger.info("Logger : E-Mail Id :", user.getEmail_id());
+		System.out.println("=============");
+		System.out.println("E-Mail Id : " +user.getEmail_id());
+		return "Successfuly Mask Private Data";
+		*/
 
 	}
 
